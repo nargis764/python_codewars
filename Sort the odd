@@ -1,0 +1,18 @@
+
+def sort_array(source_array):
+    result_array = [0] * len(source_array)   
+    temp_array = []
+
+    for i in range(len(source_array)):
+        if source_array[i] % 2 != 0:            
+            temp_array.append(source_array[i])
+    sorted_array = sorted(temp_array)       
+            
+    for i in range(len(source_array)):        
+            if source_array[i] % 2 != 0: 
+                result_array[i] = sorted_array.pop(0)
+            else: 
+                result_array[i] = source_array[i]
+            
+
+    return result_array    
