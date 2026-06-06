@@ -1,0 +1,17 @@
+-- Simple Fun #326a: The Shorterest Time
+
+def shorterest_time(n, m, speeds):
+    elevator_speed = speeds[0]    
+    elevator_opening = speeds[1]
+    elevator_closing = speeds[2]
+    stairs_speed = speeds[3]  
+    shortest_time = 0
+    
+    # edge case if n = 0
+    if n == 0:
+        return shortest_time
+    
+    only_elevator_time = abs(n-m) * elevator_speed + 2 * elevator_opening + elevator_closing + elevator_speed * n
+    with_stairs_time = abs(n-m) * stairs_speed + 2 * elevator_opening + elevator_closing + elevator_speed * m
+    only_stairs_time = n * stairs_speed
+    return min(only_elevator_time, with_stairs_time, only_stairs_time)
