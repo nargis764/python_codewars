@@ -1,0 +1,19 @@
+def high_and_low(numbers):
+    output = ""
+    
+    new_list = []
+    for i in numbers.split():
+        new_list.append(int(i))  
+    
+    high, low = new_list[0], new_list[0]
+
+    for i in new_list:
+        if i < low:
+            low = i
+        elif i> high:
+            high = i  
+        else:
+            continue   
+        
+    output = str(high) + " " + str(low)
+    return output
