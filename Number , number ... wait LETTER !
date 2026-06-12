@@ -1,0 +1,28 @@
+import re
+
+def do_math(st) :
+    my_string = st.split()
+    my_dict = {}
+    letters = [re.findall(r"[A-Za-z]", chunk)[0] for chunk in st.split()]
+    digit_list = [int(''.join(re.findall(r"\d+", s))) for s in my_string]
+    combined_list = list(zip(letters, digit_list)) 
+    for item in combined_list:
+        if item[0] not in my_dict:
+            my_dict[item[0]] = [item[1]]
+        else:
+            my_dict[item[0]].append(item[1])  
+    sorted_dict = dict(sorted(my_dict.items()))   
+    nested_list = list(sorted_dict.values())
+
+    final_list = [item for sublist in nested_list for item in sublist]
+    total = final_list[0]
+    for f in range(1,len(final_list)):
+        if f%4 == 1:
+            total += final_list[f]
+        elif f%4 == 2:
+            total -= final_list[f] 
+        elif f%4 == 3:
+            total *= final_list[f]  
+        elif f%4 == 0:
+            total /= final_list[f]     
+    return round(total)
