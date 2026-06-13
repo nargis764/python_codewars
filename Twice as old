@@ -1,0 +1,14 @@
+def twice_as_old(dad_years_old, son_years_old):
+    counter = 0
+    
+    if dad_years_old == 2 * son_years_old:
+        return counter
+
+    if dad_years_old > 2 * son_years_old:
+        while 2 * (son_years_old + counter) < (dad_years_old + counter): 
+            counter += 1   
+    else:
+        while 2 * (son_years_old + counter) > (dad_years_old + counter): 
+            counter -= 1   
+
+    return abs(counter)
