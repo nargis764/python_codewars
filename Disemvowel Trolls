@@ -1,0 +1,11 @@
+def disemvowel(string_):
+    vowel_string = 'aeiou'
+    new_string = ""
+    
+    for s in string_:
+        if s.lower() in vowel_string:
+            continue
+        else:
+            new_string += s
+                
+    return new_string
