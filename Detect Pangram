@@ -1,0 +1,4 @@
+def is_pangram(st):  
+    modified_sentence = "".join(ch.lower() for ch in st if ch.isalpha())
+    unique_chars = set(modified_sentence)
+    return len(unique_chars) == 26
