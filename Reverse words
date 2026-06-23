@@ -1,0 +1,9 @@
+import re
+
+def reverse_words(text):    
+    new = re.split(r'(\s+)', text)
+    final_sentence = ""
+
+    for w in range(len(new)):
+        final_sentence +=  new[w][::-1]
+    return "".join(final_sentence)
