@@ -1,0 +1,13 @@
+from collections import Counter
+
+def duplicate_encode(word):
+    new = Counter(list(word.lower()))
+    
+    encode = ""
+    for i in word.lower():
+        if new[i] > 1:
+            encode += ")"
+        else:
+            encode += "("
+
+    return encode
