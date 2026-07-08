@@ -1,0 +1,19 @@
+def word_mesh(words):
+    resulted_list = []
+    for i in range(0, len(words)-1): 
+        substring_list = []   
+        for j in range(1, len(words[i]) + 1):  
+            if words[i][-j:] in words[i+1][:j]: 
+                substring_list.append(words[i][-j:])    
+
+        if len(substring_list) == 0:
+            return "failed to mesh"    
+        elif len(substring_list) == 1:
+            resulted_list.append(substring_list[0]) 
+        else:
+            resulted_list.append(max(substring_list))
+             
+    if len(resulted_list) == len(words)-1:
+        return "".join(resulted_list)
+    else:
+        return "failed to mesh"      
