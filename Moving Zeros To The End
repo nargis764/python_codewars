@@ -1,0 +1,11 @@
+def move_zeros(lst):
+    zeroes_lst = []
+    non_zeroes_lst = []
+    
+    for i, num in enumerate(lst):
+        if num == 0:   
+            zeroes_lst.append(num) 
+        else:
+            non_zeroes_lst.append(num)
+                   
+    return non_zeroes_lst + zeroes_lst
